@@ -1,5 +1,5 @@
 import streamlit as st
-import os, shutil, mimetypes
+import os, shutil, mimetypes, random, string
 from icons import *
 
 style='''
@@ -81,3 +81,6 @@ def download_file(download_file_path, ele):
               mime=mimestart,
           )
       file.close()
+
+def generate_random_id():
+  return ''.join(random.choices(string.ascii_letters + string.digits, k=16))
